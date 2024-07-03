@@ -1,0 +1,1253 @@
+/* styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: transparent;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.logo img {
+    height: 70px;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+}
+
+header.scrolled .logo img {
+    filter: none;
+}
+
+nav {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 40px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+header.scrolled nav ul li a {
+    color: black;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+
+.video-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    filter: blur(0px);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.content {
+    position: absolute;
+    top: 45%;
+    left: 7%;
+    transform: translateY(-50%);
+    text-align: left;
+    color: white;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 4em;
+    margin: 0;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+
+
+.line-below {
+    border: none;
+    border-bottom: 3px solid #35527A;
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* New Section Styles */
+.new-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: white;
+}
+
+.new-section .tab {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Height of the tab */
+    background-color: #DFD7D7;
+}
+
+.new-section .container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    padding-top: 20px; /* Add padding to prevent overlap with the tab */
+}
+
+.new-section .left-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative; /* Set the container to relative position */
+}
+
+.new-section .left-side img {
+    max-width: 80%; /* Adjust this value to make the image smaller */
+    height: auto;   /* Maintain the aspect ratio */
+    position: absolute; /* Set the image to absolute position */
+    top: 45px; /* Adjust this value to move the image up */
+}
+
+.new-section .right-side {
+    flex: 1; /* Adjust this value to make the right side narrower */
+    padding-left: 50px;
+}
+
+.new-section .right-side h2 {
+    font-size: 2.5em;
+    color: #35527A;
+    margin-bottom: 20px;
+}
+
+.new-section .right-side p {
+    font-size: 1.2em;
+    color: #35527A;
+    line-height: 1.5;
+    margin-bottom: 20px; /* Add some margin below the paragraph */
+}
+
+.new-section .right-side .narrow-paragraph {
+    max-width: 500px; /* Adjust this value to make the paragraph narrower */
+    text-align: left; /* Align text to the left */
+}
+
+.new-section-two h2{
+    border: 1px solid;
+}
+
+fflip-section {
+    text-align: left;
+    padding: 20px;
+    background-color: white; /* White background for the section */
+}
+
+.flip-section-header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.flip-section-header h2 {
+    font-size: 1.5em;
+    color: #35527A;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    margin-left: 40px; /* Add margin to move the heading to the right */
+}
+
+.flip-section-header .vertical-line {
+    display: inline-block;
+    width: 2px;
+    height: 60px; /* Adjust height as needed */
+    background-color: #35527A;
+    margin-left: 50px;
+}
+
+.flip-boxes-wrapper {
+    background-color: #1b3253; /* Blue background for the flip boxes */
+    padding: 80px 60px 100px 60px; /* Increase bottom padding to make it longer */
+    border-radius: 0px;
+}
+/**************/
+.flip-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 90px; /* Increase gap to make boxes farther apart */
+}
+
+.flip-box {
+    background-color: transparent;
+    width: 250px;
+    height: 220px;
+    perspective: 1000px;
+    margin-left: -20px;
+}
+
+.flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: white;
+    text-align: left;
+}
+
+#box1 .flip-box-front {
+    background-color: #008080; /* Default color for the first flip box front */
+}
+
+#box2 .flip-box-front {
+    background-color: #708090; /* Default color for the first flip box front */
+}
+
+#box3 .flip-box-front {
+    background-color: #A6A6A6; /* Default color for the first flip box front */
+}
+
+#box4 .flip-box-front {
+    background-color: #1D5C96; /* Default color for the first flip box front */
+}
+
+/*****/
+
+
+/* Styles for the second flip box */
+.flip-box-front p, .flip-box-back p {
+    text-align: left; /* Ensure paragraphs are left-aligned */
+    font-size: 1.2em; /* Make the paragraph text smaller */
+}
+/*******/
+
+.linethree{
+    height: 1px; /* Increase the height to make it thicker */
+    background-color: #000000; /* Change the color as needed */
+    width: 1500px; /* Adjust this width as needed */
+    margin-right: 10px;
+    margin-bottom: 30px;
+}
+
+.fourth-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f0f0f0; /* Adjust the background color as needed */
+}
+
+.fourth-section-header {
+    margin-bottom: 20px;
+}
+
+.fourth-section-header h2 {
+    font-size: 2.5em;
+    color: #35527A;
+    margin: 0;
+    margin-bottom: 10px; /* Ensure there's space below the heading */
+}
+
+.line-below {
+    height: 2px; /* Adjust the thickness as needed */
+    background-color: #35527A; /* Change the color as needed */
+    width: 500px; /* Adjust the width as needed */
+    margin: 0 auto 20px auto; /* Center the line and add space below it */
+}
+
+.new-section-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.new-section-content p {
+    font-size: 1.1em;
+    color: #35527A;
+    margin: 20px 0;
+    margin-top: 50px;
+    font-weight: bold; /* Make the text bold */
+}
+
+.images-container {
+    display: flex;
+    flex-direction: row; /* Arrange images horizontally */
+    justify-content: center; /* Center the images */
+    gap: 110px; /* Space between the images */
+    margin-top: 70px;
+}
+
+.image-box {
+    background-color: #333;
+    width: 450px; /* Width of the image box */
+    height: 250px; /* Height of the image box */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Hide overflow of images */
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the box */
+}
+
+.solutions-section {
+    text-align: center;
+    padding: 0; /* Remove padding */
+    background-color: #ffffff; /* Light gray background */
+    width: 100%; /* Ensure the section spans the full width */
+}
+
+.solutions-header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    position: left;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding: 20px 0; /* Add padding to the header for spacing */
+}
+
+
+.tabsolutions {
+    width: 100%;
+    height: 90px; /* Adjust the height as needed */
+    background-color: #1b3253; /* Grey color for the tab */
+}
+
+.tabsolutionstwo{
+    width: 100%;
+    height: 90px; /* Adjust the height as needed */
+    background-color: #ffffff; /* Grey color for the tab */
+}
+
+.solutions-header h2 {
+    font-size: 2.5em; /* Font size for the header */
+    color: #35527A;
+    margin: 0;
+}
+
+.horizontal-line {
+    width: 350px; /* Adjust width as needed */
+    height: 4px; /* Thickness of the line */
+    background-color: #22B5DE; /* Color of the line */
+    margin: 50px; /* Space above and below the line, center align */
+    margin-top: -30px;
+    margin-left: -20px;
+}
+
+.solutions-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px; /* Space between the solution boxes */
+    padding: 60px;
+    background-color: #ffffff; /* Gray background for the content */
+    border-top: 5px solid #ffffff; /* Top border */
+    border-bottom: 5px solid #ffffff; /* Bottom border */
+    width: 100%; /* Ensure the content spans the full width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.solution-box {
+    display: flex;
+    align-items: flex-start; /* Align items to the left */
+    text-align: left; /* Align text to the left */
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px; /* Adjust width as needed */
+    height: 150px;
+    flex-direction: column; /* Arrange icon and text on top of each other */
+    background-color: #f5f5f5; 
+    transition: transform 0.7s ease;
+  
+}
+
+.solution-box:hover {
+    transform: scale(1.05); /* Slightly increase the size on hover */
+    
+}
+
+
+.solution-box i {
+    font-size: 3em;
+    text-align: left;
+    color: #22B5DE; /* Icon color */
+    margin-right: 25px; /* Space between icon and text */
+    margin-bottom: 20px;
+}
+
+.solution-box h3 {
+    font-size: 1.6em;
+    color: #000000;
+    margin: 0;
+    font-weight: 400; /* Adjust font thickness */
+}
+
+
+/* Overview Section Styles */
+.overview-section {
+    padding: 40px 20px;
+    background-color: #ffffff; /* White background */
+}
+
+.overview-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left; /* Align text to the left */
+    margin-left: -10px;
+}
+
+.overview-header h2 {
+    font-size: 2em;
+    color: #35527A;
+    margin: 0 0 20px 0;
+}
+
+.overview-header .horizontal-line {
+    width: 350px; /* Adjust width as needed */
+    height: 5px; /* Thickness of the line */
+    background-color: #22B5DE; /* Color of the line */
+    margin: 10px 0; /* Space above and below the line */
+    margin-bottom: 20px;
+}
+
+.overview-header p {
+    font-size: 1em;
+    color: #333;
+    margin: 0 0 40px 0;
+}
+
+.overview-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px; /* Space between the boxes */
+}
+
+.overview-box {
+    background-color: #35527A; /* Background color for the boxes */
+    color: #fff;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    width: 300px; /* Adjust width as needed */
+    height: 220px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visual separation */
+}
+
+.overview-box:nth-child(2) {
+    background-color: #22B5DE; /* Different background color for the second box */
+}
+
+.overview-box h3 {
+    font-size: 1.25em;
+    margin: 0 0 10px 0;
+    color: #fff; /* White color for the headings */
+}
+
+.overview-box p {
+    font-size: 1em;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.footer-section {
+    background-color: #f8f8f8; /* Light grey background */
+    padding: 40px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-left {
+    flex: 2;
+    text-align: left;
+}
+
+.footer-logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    display: inline-block;
+    margin-right: 20px;
+    color: #35527A;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.linkedin-logo {
+    width: 40px;
+    margin-top: 20px;
+}
+
+.footer-left p {
+    font-size: 1.1em; /* Smaller font size for the paragraph */
+}
+
+.footer-right {
+    display: flex;
+    justify-content: space-between;
+    flex: 3; /* Increase flex-grow to move more to the right */
+    text-align: left;
+}
+
+.footer-right > div {
+    margin-left: 100px;
+}
+
+.footer-right h3 {
+    font-size: 1.2em;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.footer-right p {
+    font-size: 1em;
+    color: #000;
+    margin: 5px 0;
+}
+
+.footer-right i {
+    margin-right: 10px;
+    color: #000;
+}
+
+.footer-right h3::after {
+    content: '';
+    display: block;
+    width: 60px; /* Adjust width as needed */
+    height: 4px; /* Adjust height for thickness */
+    background-color: #22B5DE; /* Lovely line color */
+    margin-top: 5px; /* Space between text and line */
+}
+
+.footer-location .location-details {
+    margin-left: 25px; /* Align the locations with the "GCC Countries:" text */
+}
+
+.simple-footer {
+    background-color: #fff; /* White background */
+    text-align: right; /* Align text to the right */
+    padding: 10px 20px; /* Add padding for spacing */
+    font-size: 0.7em; /* Smaller font size */
+    color: #000; /* Black text color */
+    border-top: 1px solid #ccc; /* Light gray top border */
+}
+
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+    background: url('images/contactusbackgroud.png') no-repeat center center; /* Add this line */
+    background-size: cover; /* Zoom in the background image */
+    color: white;
+    min-height: 100vh;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 50px; /* Adjusted to move content up */
+}
+
+.contact-info-original {
+    flex: 1;
+    padding: 20px;
+}
+
+.contact-info-original h2 {
+    font-size: 3em; /* Adjusted size */
+    margin-bottom: 20px;
+}
+
+.contact-info-original p {
+    font-size: 1.1em; /* Adjusted size */
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.contact-form-box {
+    flex: 1;
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin-left: 20px;
+}
+
+.contact-form-box h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: #22558b;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-form-box h2 i {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-group input[type="text"]:first-child {
+    margin-bottom: 20px; /* Add more space between First Name and Last Name fields */
+}
+
+.form-group button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #3a6ea5;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form-group button:hover {
+    background: #58a6ff;
+}
+
+#loading-message {
+    display: none;
+    font-size: 14px; /* Smaller text */
+    color: #555555; /* Change to desired color */
+    margin-top: 10px;
+}
+
+
+/* Styles for countries page header */
+header.countries-header {
+    background: white;
+}
+
+header.countries-header .logo img {
+    filter: none;
+}
+
+header.countries-header nav ul li a {
+    color: black;
+}
+
+/* Styles for countries page header */
+header.countries-header {
+    background: white;
+}
+
+header.countries-header .logo img {
+    filter: none;
+}
+
+header.countries-header nav ul li a {
+    color: black;
+}
+
+/* Countries Page Styles */
+.horizontal-line-countries {
+    width: 100%;
+    height: 5px;
+    background-color: #35527A;
+    margin-top: 120px; /* Adjust according to the header height */
+}
+
+.countries-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 100px 50px;
+}
+
+.countries-list {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    text-align: left;
+}
+
+.countries-list h2 {
+    margin-bottom: 10px;
+    margin-left: -40px;
+    margin-top: -50px;
+    font-size: 3em;
+}
+
+.countries-list p {
+    margin: 5px 0;
+    margin-left: -50px;
+    font-size: 1em;
+}
+
+.countries-list select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-left: -50px;
+}
+
+.countries-list select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 80px;
+    border: 1px solid #ccc;
+    font-size: 22px; /* Larger font size */
+}
+
+.country-info {
+    margin-top: 20px;
+    display: none;
+}
+
+.world-map {
+    width: 60%;
+    text-align: right;
+}
+
+.world-map img {
+    margin-top: -90px;
+    max-width: 100%;
+    height: auto;
+}
+
+.countries-list select option {
+    font-size: 50px; /* Larger font size for options */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: -100%;
+    top: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2); /* Set a semi-transparent background */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    backdrop-filter: blur(10px); /* Apply the blur effect */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.dropdown-content .dropdown-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* BAHRAIN PAGE */
+.horizontal-line-country-info {
+    width: 100%;
+    height: 5px;
+    background-color: #35527A;
+    margin-top: 120px; /* Adjust according to the header height */
+}
+
+.horizontal-line-country-info-forhome {
+    width: 100%;
+    height: 5px;
+    background-color: #35527A;
+    margin-top: 90px; /* Adjust according to the header height */
+    margin-bottom: 40px;
+}
+
+
+.country-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 40px; /* Increase the gap to move text more to the right */
+    margin-top: 40px; /* Add gap on top of the container */
+    margin-bottom: 80px;
+}
+
+.country-map-container {
+    flex: 1;
+    margin-top: 40px; /* Add gap on top of the image */
+    margin-bottom: 20px;
+}
+
+.country-map {
+    max-width: 300px;
+    height: auto;
+}
+
+.country-text {
+    flex: 2;
+    text-align: left;
+    margin-left: 40px; /* Add margin to move the text more to the right */
+    margin-top: 40px; /* Add gap on top of the text */
+    margin-bottom: 80px;
+}
+
+.country-text h2 {
+    font-size: 44px;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #ff0000; /* Change this to the desired color */
+}
+
+.country-text p {
+    font-size: 18px;
+    margin-bottom: 80px;
+}
+
+/* Add this CSS below your existing styles */
+
+/* Additional information section */
+.additional-info {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: block; /* Make it initially visible for debugging */
+}
+
+.additional-info h2 {
+    margin-top: 0;
+}
+
+.additional-info p {
+    margin: 10px 0;
+}
+
+.horizontal-line-country-info-two{
+    width: 100%;
+    height: 5px;
+    background-color: #35527A;
+    margin-bottom: -50px;
+}
+
+.additional-info h2{
+ color: #35527A;
+ font-size: 34px;
+}
+
+.additional-info p{
+    color: #000000;
+    font-size: 18px;
+}
+
+.additional-info-two {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    display: block; /* Make it initially visible for debugging */
+}
+
+.additional-info-two h2{
+    color: #35527A;
+    font-size: 34px;
+    margin-top: 10px;
+}
+
+   .horizontal-line-certification {
+    width: 350px; /* Adjust width as needed */
+    height: 4px; /* Thickness of the line */
+    background-color: #22B5DE; /* Color of the line */
+    margin: 50px; /* Space above and below the line, center align */
+    margin-top: -10px;
+    margin-left: -20px;
+}
+
+.additional-info-two p{
+    color: #35527A;
+    font-size: 18px;
+    margin-top: 2px;
+}
+
+/* Button styles */
+.request-approval-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background-color: #35527A; /* Dark blue color */
+    border: 2px solid #35527A;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-bottom: 90px;
+}
+
+.request-approval-btn:hover {
+    background-color: transparent;
+    color: #35527A;
+}
+
+.horizontal-line-country-info-final{
+    width: 100%;
+    height: 15px;
+    background-color: #35527A;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    margin-bottom: 150px;
+}
+
+.contact-info {
+    max-width: 50%;
+}
+
+.contact-info h2{
+    font-size: 58px;
+    color: #35527A;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-icon {
+    max-width: 50%;
+    margin-right: 100px;
+}
+
+.contact-icon img {
+    width: 100%;
+    height: auto;
+    max-width: 1000px; /* Adjust this value to make the icon larger */
+}
+
+
+
+/* ABOUT US PAGE*/
+.horizontal-line-about {
+    height: 5px;
+    background-color: #00a9e0;
+}
+
+.about-section {
+    padding: 20px;
+}
+
+.about-header-text {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-header-text h2 {
+    margin-top: 120px;
+    margin-left: -1080px;
+    font-size: 48px;
+}
+
+.horizontal-line-aboutpage {
+    width: 300px;
+    height: 5px;
+    background-color: #00a9e0;
+    margin: 1 auto;
+    margin-top: -20px;
+    margin-left: 25px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-description {
+    max-width: 60%;
+}
+
+.about-description h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.horizontal-line-small {
+    width: 30px;
+    height: 3px;
+    background-color: #00a9e0;
+    margin-bottom: 20px;
+}
+
+.about-description p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.about-icon {
+    max-width: 30%;
+}
+
+.about-icon i {
+    font-size: 200px;
+    color: #c42727;
+}
+
+/***********************************************/
+/* about us page */
+
+ .flip-section-header2 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.flip-section-header2 h2 {
+    font-size: 1.5em;
+    color: #35527A;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    margin-left: 40px; /* Add margin to move the heading to the right */
+
+}
+
+.flip-section-header2 .vertical-line {
+    display: inline-block;
+    width: 2px;
+    height: 60px; /* Adjust height as needed */
+    background-color: #35527A;
+    margin-left: 50px;
+}
+
+.flip-boxes-wrapper2 {
+    background-color: #ffffff; /* Blue background for the flip boxes */
+    padding: 20px 60px 80px 60px; /* Increase bottom padding to make it longer */
+    border-radius: 0px;
+}
+.flip-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 90px; /* Increase gap to make boxes farther apart */
+}
+
+.flip-box2 {
+    background-color: transparent;
+    width: 250px;
+    height: 280px;
+    perspective: 1000px;
+    margin-left: -20px;
+}
+
+.flip-box-front2, .flip-box-back2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: white;
+    text-align: left;
+}
+
+#box1 .flip-box-front2 {
+    background-color: #00a9e0; /* Default color for the first flip box front */
+    height: 280px;
+    margin-top: -30px;
+}
+
+#box2 .flip-box-front2 {
+    background-color: #045874; /* Default color for the first flip box front */
+}
+
+#box3 .flip-box-front2 {
+    background-color: #6dabc0; /* Default color for the first flip box front */
+}
+ #box4 .flip-box-front2 {
+    background-color: #127b9e; /* Default color for the first flip box front */
+}
+
+
+
+/* Styles for the second flip box */
+.flip-box-front2 p, .flip-box-back2 p {
+    text-align: left; /* Ensure paragraphs are left-aligned */
+    font-size: 1.2em; /* Make the paragraph text smaller */
+}
