@@ -297,6 +297,10 @@
     }
 }
 
+/* styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body, html {
     margin: 0;
     padding: 0;
@@ -317,6 +321,7 @@ header {
     z-index: 2;
     transition: background-color 0.3s ease;
 }
+
 header.scrolled {
     background: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -582,7 +587,7 @@ fflip-section {
 .flip-box {
     background-color: transparent;
     width: 250px;
-    height: 280px;
+    height: 270px;
     perspective: 1000px;
     margin-left: -20px;
 }
