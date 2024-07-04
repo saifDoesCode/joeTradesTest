@@ -7,6 +7,28 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/favicon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <style>
+        /* Style the search input and select box with rounded borders */
+        .select2-container--default .select2-selection--single {
+            border-radius: 8px;
+            height: 38px;
+            border: 1px solid #ccc;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            line-height: 36px;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 36px;
+        }
+
+        .select2-dropdown {
+            border-radius: 17px;
+        }
+    </style>
+
 </head>
 <body>
     <header id="header" class="countries-header">
@@ -26,65 +48,66 @@
     <section class="countries-section">
         <div class="countries-list">
             <h2>Countries</h2>
-            <select id="country-select" onchange="showCountryInfo()">
+            <select id="country-select" onchange="showCountryInfo()" style="width: 100%;">
                 <option value="">Select a country</option>
                 <!-- Middle Eastern Countries -->
-                <option value="bahrain">🇧🇭 Bahrain</option>
-                <option value="iran">🇮🇷 Iran</option>
-                <option value="iraq">🇮🇶 Iraq</option>
-                <option value="jordan">🇯🇴 Jordan</option>
-                <option value="kuwait">🇰🇼 Kuwait</option>
-                <option value="lebanon">🇱🇧 Lebanon</option>
-                <option value="oman">🇴🇲 Oman</option>
-                <option value="pakistan">🇵🇰 Pakistan</option>
-                <option value="palestine">🇵🇸 Palestine</option>
-                <option value="qatar">🇶🇦 Qatar</option>
-                <option value="saudiarabia">🇸🇦 Saudi Arabia</option>
-                <option value="syria">🇸🇾 Syria</option>
-                <option value="uae">🇦🇪 UAE</option>
-                <option value="yemen">🇾🇪 Yemen</option>
+                <option value="bahrain">Bahrain</option>
+                <option value="iran">Iran</option>
+                <option value="iraq">Iraq</option>
+                <option value="jordan">Jordan</option>
+                <option value="kuwait">Kuwait</option>
+                <option value="lebanon">Lebanon</option>
+                <option value="oman">Oman</option>
+                <option value="pakistan">Pakistan</option>
+                <option value="palestine">Palestine</option>
+                <option value="qatar">Qatar</option>
+                <option value="saudiarabia">Saudi Arabia</option>
+                <option value="syria">Syria</option>
+                <option value="uae">UAE</option>
+                <option value="yemen">Yemen</option>
                 
                 <!-- African Countries -->
-                <option value="afghanistan">🇦🇫 Afghanistan</option>
-                <option value="algeria">🇩🇿 Algeria</option>
-                <option value="angola">🇦🇴 Angola</option>
-                <option value="benin">🇧🇯 Benin</option>
-                <option value="botswana">🇧🇼 Botswana</option>
-                <option value="cis_countries">CIS countries</option>
-                <option value="egypt">🇪🇬 Egypt</option>
-                <option value="madagascar">🇲🇬 Madagascar</option>
-                <option value="malawi">🇲🇼 Malawi</option>
-                <option value="mauritania">🇲🇷 Mauritania</option>
-                <option value="morocco">🇲🇦 Morocco</option>
-                <option value="namibia">🇳🇦 Namibia</option>
-                <option value="niger">🇳🇪 Niger</option>
-                <option value="nigeria">🇳🇬 Nigeria</option>
-                <option value="rwanda">🇷🇼 Rwanda</option>
-                <option value="senegal">🇸🇳 Senegal</option>
-                <option value="seychelles">🇸🇨 Seychelles</option>
-                <option value="sierra_leone">🇸🇱 Sierra Leone</option>
-                <option value="south_africa">🇿🇦 South Africa</option>
-                <option value="south_sudan">🇸🇸 South Sudan</option>
-                <option value="sudan">🇸🇩 Sudan</option>
-                <option value="tunisia">🇹🇳 Tunisia</option>
-                <option value="uganda">🇺🇬 Uganda</option>
+                <option value="afghanistan">Afghanistan</option>
+                <option value="algeria">Algeria</option>
+                <option value="angola">Angola</option>
+                <option value="benin">Benin</option>
+                <option value="botswana">Botswana</option>
+                <option value="egypt">Egypt</option>
+                <option value="madagascar">Madagascar</option>
+                <option value="malawi">Malawi</option>
+                <option value="mauritania">Mauritania</option>
+                <option value="morocco">Morocco</option>
+                <option value="namibia">Namibia</option>
+                <option value="niger">Niger</option>
+                <option value="nigeria">Nigeria</option>
+                <option value="rwanda">Rwanda</option>
+                <option value="senegal">Senegal</option>
+                <option value="seychelles">Seychelles</option>
+                <option value="sierra_leone">Sierra Leone</option>
+                <option value="south_africa">South Africa</option>
+                <option value="south_sudan">South Sudan</option>
+                <option value="sudan">Sudan</option>
+                <option value="tunisia">Tunisia</option>
+                <option value="uganda">Uganda</option>
 
                 <!-- CIS Countries -->
-                <option value="kazakhstan">🇰🇿 Kazakhstan</option>
-                <option value="turkmenistan">🇹🇲 Turkmenistan</option>
-                <option value="tajikistan">🇹🇯 Tajikistan</option>
-                <option value="uzbekistan">🇺🇿 Uzbekistan</option>
-                <option value="kyrgyzstan">🇰🇬 Kyrgyzstan</option>
-                <option value="azerbaijan">🇦🇿 Azerbaijan</option>
-                <option value="armenia">🇦🇲 Armenia</option>
-                </select>
-                
+                <option value="kazakhstan">Kazakhstan</option>
+                <option value="turkmenistan">Turkmenistan</option>
+                <option value="tajikistan">Tajikistan</option>
+                <option value="uzbekistan">Uzbekistan</option>
+                <option value="kyrgyzstan">Kyrgyzstan</option>
+                <option value="azerbaijan">Azerbaijan</option>
+                <option value="armenia">Armenia</option>
+            </select>
+            
             <div id="country-info" class="country-info"></div>
         </div>
         <div class="world-map">
             <img src="images/worldmap.png" alt="World Map">
         </div>
     </section>
+
+    
 
     <footer class="footer-section">
         <div class="footer-content">
@@ -126,6 +149,37 @@
     <footer class="simple-footer">
         <p>© 2024 Joe Trades. All rights reserved.</p>
     </footer>
+    <!-- Include Select2 JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#country-select').select2({
+                placeholder: "Select a country"
+            });
+        });
+
+        function filterCountries() {
+            const searchInput = document.getElementById('country-search').value.toLowerCase();
+            const select = document.getElementById('country-select');
+            const options = select.options;
+
+            for (let i = 0; i < options.length; i++) {
+                const option = options[i];
+                const text = option.text.toLowerCase();
+                option.style.display = text.includes(searchInput) ? '' : 'none';
+            }
+        }
+
+        function showCountryInfo() {
+            const countrySelect = document.getElementById('country-select');
+            const selectedCountry = countrySelect.value;
+            const countryInfo = document.getElementById('country-info');
+
+            // Logic to display country information based on the selected value
+            countryInfo.innerHTML = `You selected: ${selectedCountry}`;
+        }
+    </script>
     <script src="scripts.js"></script>
 </body>
 </html>
