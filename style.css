@@ -1,4 +1,13 @@
-/* Global Styles */
+/* styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Common Styles for Smaller Screens */
+
+
+/* styles.css */
+
+
 body, html {
     margin: 0;
     padding: 0;
@@ -6,7 +15,19 @@ body, html {
     font-family: 'Roboto', sans-serif;
 }
 
-/* Header Styles */
+@media (max-width: 768px) {
+    .video-container, .content {
+        width: 100%; /* Ensure the content takes full width on mobile */
+        padding-left: 0; /* Remove any left padding */
+        padding-right: 0; /* Remove any right padding */
+    }
+    .video-container, .content {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+}
+
 header {
     position: fixed;
     top: 0;
@@ -20,22 +41,27 @@ header {
     z-index: 2;
     transition: background-color 0.3s ease;
 }
+
 header.scrolled {
     background: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .logo {
     margin-left: 30px;
     margin-top: 10px;
 }
+
 .logo img {
     height: 70px;
     filter: brightness(0) invert(1);
     transition: filter 0.3s ease;
 }
+
 header.scrolled .logo img {
     filter: none;
 }
+
 nav {
     flex: 2;
     display: flex;
@@ -43,15 +69,18 @@ nav {
     align-items: center;
     padding-top: 10px;
 }
+
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
+
 nav ul li {
     margin: 0 40px;
 }
+
 nav ul li a {
     text-decoration: none;
     color: white;
@@ -59,9 +88,15 @@ nav ul li a {
     font-weight: 700;
     transition: color 0.3s ease;
 }
+
 header.scrolled nav ul li a {
     color: black;
 }
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -70,80 +105,25 @@ header.scrolled nav ul li a {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
+
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
+
 .dropdown-content a:hover {
     background-color: #ddd;
 }
 
-/* Navigation and Header Styles for Smaller Screens */
-@media (max-width: 768px) {
-    nav {
-        display: none;
-    }
-}
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
-    }
-    .logo {
-        margin: 0 0 10px 0;
-    }
-    nav {
-        padding-top: 0;
-    }
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    nav ul li {
-        margin: 10px 0;
-    }
-}
-
-/* Styles for Mobile Tabs */
-@media (max-width: 480px) {
-    nav ul.nav-list {
-        display: none;
-    }
-    nav ul.nav-tabs {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        background: #333;
-        padding: 10px 0;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        z-index: 3;
-    }
-    nav ul.nav-tabs li {
-        margin: 0;
-        flex: 1;
-        text-align: center;
-    }
-    nav ul.nav-tabs li a {
-        color: white;
-        font-size: 0.875em;
-    }
-    nav ul.nav-tabs li a.active {
-        color: yellow;
-    }
-}
-
-/* Video Container Styles */
 .video-container {
     position: relative;
     height: 100vh;
     width: 100%;
     overflow: hidden;
 }
+
 #background-video {
     position: absolute;
     top: 50%;
@@ -156,6 +136,7 @@ header.scrolled nav ul li a {
     transform: translate(-50%, -50%);
     filter: blur(0px);
 }
+
 .overlay {
     position: absolute;
     top: 0;
@@ -164,6 +145,7 @@ header.scrolled nav ul li a {
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
 }
+
 .content {
     position: absolute;
     top: 45%;
@@ -174,57 +156,135 @@ header.scrolled nav ul li a {
     z-index: 1;
     padding: 0 15px;
 }
+
 h1 {
     font-size: 4em;
     margin-top: 90px;
-    margin-bottom: 20px;
-}
-p {
-    font-size: 1.5em;
-    margin-top: 10px;
+    margin-bottom: 20px; /* Adjust this value to reduce the gap */
 }
 
-/* Styles for Smaller Screens */
+p {
+    font-size: 1.5em;
+    margin-top: 10px; /* Adjust this value to reduce the gap */
+}
+
+
+/* Media Queries for Mobile Devices */
+/* Hide navigation bar on screens smaller than 768px (phones and tablets) */
 @media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+}
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .logo {
+        margin: 0 0 10px 0;
+    }
+
+    nav {
+        padding-top: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
     .video-container {
         height: 60vh;
     }
+
     .content {
         top: 50%;
         left: 10%;
         transform: translateY(-50%);
     }
+
     h1 {
         font-size: 2em;
     }
+
     p {
         font-size: 1em;
     }
 }
+
 @media (max-width: 480px) {
+    header {
+        padding: 5px;
+    }
+
+    nav ul.nav-list {
+        display: none;
+    }
+
+    nav ul.nav-tabs {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background: #333;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 3;
+    }
+
+    nav ul.nav-tabs li {
+        margin: 0;
+        flex: 1;
+        text-align: center;
+    }
+
+    nav ul.nav-tabs li a {
+        color: white;
+        font-size: 0.875em;
+    }
+
+    nav ul.nav-tabs li a.active {
+        color: yellow;
+    }
+
     .video-container {
         height: 50vh;
     }
+
     .content {
         top: 40%;
         left: 5%;
         right: 5%;
         transform: translateY(-50%);
         text-align: center;
-        margin-top: 20px;
+        margin-top: 20px; /* Added margin for spacing */
     }
+
     h1 {
         font-size: 1.5em;
     }
+
     p {
         font-size: 0.875em;
     }
+
     .logo img {
         height: 40px;
     }
 }
 
-/* Button Styles */
+
+
 button {
     margin-top: 20px;
     padding: 15px 30px;
@@ -237,24 +297,19 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 button:hover {
     background-color: #007BFF;
     color: white;
 }
 
-/* Line Styles */
+
+
 .line-below-home {
     border: none;
     border-bottom: 3px solid #35527A;
     width: 90%;
     margin: 10px 0;
-}
-.linethree {
-    height: 1px;
-    background-color: #000000;
-    width: 1500px;
-    margin-right: 10px;
-    margin-bottom: 30px;
 }
 
 /* New Section Styles */
@@ -266,98 +321,115 @@ button:hover {
     padding: 50px;
     background-color: white;
 }
+
 .new-section .tab {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 50px;
+    height: 50px; /* Height of the tab */
     background-color: #DFD7D7;
 }
+
 .new-section .container {
     display: flex;
     max-width: 1200px;
     width: 100%;
-    padding-top: 20px;
+    padding-top: 20px; /* Add padding to prevent overlap with the tab */
 }
+
 .new-section .left-side {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    position: relative;
+    position: relative; /* Set the container to relative position */
 }
+
 .new-section .left-side img {
-    max-width: 80%;
-    height: auto;
-    position: absolute;
-    top: 45px;
+    max-width: 80%; /* Adjust this value to make the image smaller */
+    height: auto;   /* Maintain the aspect ratio */
+    position: absolute; /* Set the image to absolute position */
+    top: 45px; /* Adjust this value to move the image up */
 }
+
 .new-section .right-side {
-    flex: 1;
+    flex: 1; /* Adjust this value to make the right side narrower */
     padding-left: 50px;
 }
+
 .new-section .right-side h2 {
     font-size: 2.5em;
     color: #35527A;
     margin-bottom: 20px;
 }
+
 .new-section .right-side p {
     font-size: 1.2em;
     color: #35527A;
     line-height: 1.5;
-    margin-bottom: 20px;
-}
-.new-section .right-side .narrow-paragraph {
-    max-width: 500px;
-    text-align: left;
+    margin-bottom: 20px; /* Add some margin below the paragraph */
 }
 
-/* New Section Media Queries */
+.new-section .right-side .narrow-paragraph {
+    max-width: 500px; /* Adjust this value to make the paragraph narrower */
+    text-align: left; /* Align text to the left */
+}
+
+/* Media Queries for Mobile Devices */
 @media (max-width: 768px) {
     .new-section {
         padding: 20px;
     }
+
     .new-section .container {
         flex-direction: column;
         align-items: flex-start;
         padding-top: 0;
     }
+
     .new-section .left-side {
         display: none;
     }
+
     .new-section .right-side {
         padding-left: 0;
         width: 100%;
     }
+
     .new-section .right-side h2 {
         font-size: 2em;
         margin-bottom: 10px;
     }
+
     .new-section .right-side p {
         font-size: 1em;
         margin-bottom: 10px;
     }
+
     .new-section .right-side .narrow-paragraph {
         max-width: 100%;
         text-align: left;
     }
 }
+
 @media (max-width: 480px) {
     .new-section .tab {
         height: 30px;
     }
+
     .new-section .right-side h2 {
         font-size: 1.5em;
     }
+
     .new-section .right-side p {
         font-size: 0.875em;
     }
+
     .new-section .right-side .narrow-paragraph {
         font-size: 0.875em;
     }
 }
-
 
 
 
@@ -516,7 +588,8 @@ button:hover {
 .line-below {
     height: 2px; /* Adjust the thickness as needed */
     background-color: #35527A; /* Change the color as needed */
-    width: 500px; /* Adjust the width as needed */
+    width: 100%; /* Make the line responsive */
+    max-width: 80%; /* Limit the line's width to 80% of the parent container */
     margin: 0 auto 20px auto; /* Center the line and add space below it */
 }
 
@@ -557,6 +630,7 @@ button:hover {
     height: 100%;
     object-fit: cover; /* Ensure images cover the box */
 }
+
 
 /* Media Queries for Mobile Devices */
 @media (max-width: 768px) {
@@ -905,6 +979,46 @@ button:hover {
     color: #000; /* Black text color */
     border-top: 1px solid #ccc; /* Light gray top border */
 }
+
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-left, .footer-right {
+        margin-left: 0;
+        width: 100%;
+        text-align: left;
+    }
+
+    .footer-right {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .footer-right > div {
+        margin-left: 0; /* Remove left margin on mobile to align correctly */
+        margin-bottom: 20px; /* Add space between sections on mobile */
+    }
+
+    .footer-logo {
+        width: 100px; /* Resize logo for mobile */
+    }
+
+    .footer-hours, .footer-location {
+        margin-bottom: 20px; /* Add spacing between sections */
+    }
+
+    .footer-right h3 {
+        font-size: 1.1em;
+    }
+
+    .footer-left p, .footer-right p {
+        font-size: 1em; /* Make text smaller on mobile for better readability */
+    }
+}
+
 
 .contact-section {
     display: flex;
